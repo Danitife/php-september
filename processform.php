@@ -26,9 +26,6 @@ session_start();
 $user = ["name" => $username, "email" => $email, "password" => $hashed_password];
 $_SESSION['login_details'] = $user;
 
-$db_name = "hostel_management";
-$password = "";
-$username = "root";
 
 include "connectdb.php";
 

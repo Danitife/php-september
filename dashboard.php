@@ -4,7 +4,7 @@ include "connectdb.php";
 if (isset($_SESSION['email']) || $_SESSION['is_loggedIn'] == TRUE) {
     $user_details = $_SESSION['login_details'];
     $email = $_SESSION['email'];
-    $query = "SELECT username FROM users WHERE email='$email'";
+    $query = "SELECT * FROM users WHERE email='$email'";
     $resp = mysqli_query($conn, $query);
     $user_details = mysqli_fetch_assoc($resp);
     print_r($user_details);
@@ -27,11 +27,20 @@ if (isset($_SESSION['email']) || $_SESSION['is_loggedIn'] == TRUE) {
             <a href="#" class="navbar-brand">Logo</a>
             <ul class="nav">
                 <li class="nav-item">
+                    <a href="profile.php" class="btn btn-danger">Profile</a>
+                </li>
+                <li class="nav-item">
                     <a href="logout.php" class="btn btn-danger">Logout</a>
                 </li>
             </ul>
         </nav>
         <h1>Welcome to your dashboard <?php echo $user_details['username'] ?></h1>
+
+        <?php
+        if ($user_details['is_verified'] == false) {
+            echo "<h2>You have not been verified</h2>";
+        }
+        ?>
     </main>
 </body>
 
