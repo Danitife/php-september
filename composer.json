@@ -1,0 +1,18 @@
+{
+    "name": "user/may-php",
+    "autoload": {
+        "psr-4": {
+            "User\\MayPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Danitife",
+            "email": "boluwatifedaniell29@gmail.com"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^3.13",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

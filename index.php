@@ -20,9 +20,9 @@
 
 // print_hobbie();
 
-$username = $_POST['username']; // document.getElementById('username')
 
 if (isset($_POST['show_username'])) {
+    $username = $_POST['username']; // document.getElementById('username')
     echo $username; // Username: Daniel
     // Email: dan@gmail.com
     // Password: 123456
